@@ -1,3 +1,4 @@
+local fs = require("filesystem")
 local utils = {}
 
 function utils.uuid()
@@ -9,9 +10,19 @@ function utils.uuid()
 end
 
 function utils.log(text)
+    if not fs.exists("/server") then
+        fs.makeDirectory("/server")
+    end
+
     local f = io.open("/server/log.txt", "a")
-    f:write("[" .. os.date() .. "] " .. text .. "\n")
-    f:close()
+    if f then
+        f:write("[" .. os.date() .. "] " .. text .. "\n")
+        f:close()
+    else
+        -- fallback to console if file can't be opened
+        print("Log error: could not open /server/log.txt")
+        print("[" .. os.date() .. "] " .. text)
+    end
 end
 
 return utils
