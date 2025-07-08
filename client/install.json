@@ -1,0 +1,11 @@
+{
+  "packageName": "clientTeleporter",
+  "description": "The client computer for each teleporter",
+  "autoUpdate": false,
+  "runOnBoot": {"path": "/client.lua", "weight": 1},
+  "programPath": "/client.lua",
+  "installPath": "/",
+  "fileInstalls": [
+    {"name": "client.lua", "type": "file"}
+  ]
+}
