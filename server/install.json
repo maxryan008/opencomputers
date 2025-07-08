@@ -1,0 +1,18 @@
+{
+  "packageName": "serverTeleporter",
+  "description": "The server controller of all teleporters",
+  "autoUpdate": false,
+  "runOnBoot": {"path": "/lib/server/main.lua", "weight": 1},
+  "programPath": "/lib/server/main.lua",
+  "installPath": "/lib/server",
+  "fileInstalls": [
+    {"name": "data.lua", "type": "file"},
+    {"name": "key_writer.lua", "type": "file"},
+    {"name": "locations.lua", "type": "file"},
+    {"name": "main.lua", "type": "file"},
+    {"name": "teleport.lua", "type": "file"},
+    {"name": "ui.lua", "type": "file"},
+    {"name": "users.lua", "type": "file"},
+    {"name": "utils.lua", "type": "file"}
+  ]
+}
